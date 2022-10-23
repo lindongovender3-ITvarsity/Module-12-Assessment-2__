@@ -1,0 +1,140 @@
+body{
+  background-color:yellow;
+  color: purple;
+  padding: 1px;
+  border: yellowgreen 3px;
+}
+
+#getContact-id{
+  background-color: purple;
+  padding: 1px;
+  color: black;
+  width:
+  border: yellowgreen 3px;
+}
+data{
+  background-color: red;
+  width: 100%;
+  font-weight: 600;
+}
+
+h2{
+  color:yellowgreen;
+  font-size: 1.5rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align:start;
+  background-color:yellow;
+  width: 80%;
+  font-weight: 600;
+}
+h3{
+  color:yellowgreen;
+  font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align:start;
+  background-color:yellow;
+  width: 80%;
+  text-decoration: underline;
+  font-weight: 600;
+}
+h5{
+  color: black;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: cadetblue 2px;
+  font-weight: 500;
+}
+
+.container-fluid{
+  background-color: yellowgreen;
+  margin: 0;
+}
+
+.navbar-toggler{
+  background-color:mediumseagreen;
+}
+
+.dropdown-menu{
+  background-color: yellowgreen;
+}
+
+.search{
+  background-color: yellowgreen;
+}
+.d-flex{
+  background-color: yellow;
+}
+
+button{
+  background-color: white;
+}
+
+table{
+  background-color:yellow;
+  color:black;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  font-style:italic;
+}
+
+tr{
+  background-color: blue;
+}
+
+
+.tem .col-lg-4{
+  padding-top: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-divider{
+  margin:3rem;
+}
+
+.footer-section{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+@media (min-width:1200px)
+{
+  .feature-heading{
+      margin-top: 10rem;
+  }
+}
+
+@media(max-width:540px)
+{
+  team{
+      margin-top: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

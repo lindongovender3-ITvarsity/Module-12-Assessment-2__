@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <body onload="fetchContacts()">
+        <br><br>
+        <nav class="navbar navbar-expand-lg bg-success">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"></a>
+              <h2>Contact Book Plus</h2>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="add-contact.html">
+                      <li><i class="fa-sharp fa-solid fa-plus"></i>Create new contact</a></li>
+                      <li><a class="dropdown-item" href="index.html">All contacts</a></li>
+                      <li><a class="dropdown-item" href="#"></a><i class="bi bi-phone"></i>Phone</li>
+                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-sim-card"></i>Sim card</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#"><i class="fa-sharp fa-solid fa-gears"></i></i>Settings</a></li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search all contacts" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <br><br><br>
+
+        <h3>All contacts</h3>
+        <br><br>
+        <div id="table">Contacts loading...</div>
+        <br><br>
+        <button id="refresh" type="button">Refresh</button>
+        <button id="addContact" type="button">Add Contact</button>
+        
+        <script src="config.js"></script>
+        <script>
+            document.getElementById("refresh").addEventListener('click',fetchContacts);
+            document.getElementById("addContact").addEventListener('click',addContact);
+            
+            function fetchContacts(){
+
+                fetch(rootPath + "controller/get-contacts/")
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    displayOutput(data);
+                    //console.log(data);
+                })
+            }
+            
+            function displayOutput(data){
+                output = "<table>";
+                
+                for(a in data){
+                    output +=`
+                        <tr onclick="editContact(${data[a].id})">
+                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="40"/></td>
+                            <td><h5>${data[a].firstname}</h5></td>
+                            <td><h5>${data[a].lastname}</h5></td>
+                        </tr>
+                        
+                    `
+                }
+                output += "</table>";
+                document.getElementById("table").innerHTML = output;
+            }
+            
+            function addContact(){
+                window.open("add-contact.html", "_self");
+            }
+            
+            function editContact(id){
+                window.open("edit-contact.html?id=" + id, "_self");
+            }
+            
+        </script>
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+    </body>
+</html>
